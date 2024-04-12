@@ -4,7 +4,7 @@ services:
         image: padloc/server
         env_file: .env
         build:
-            context: .
+            context: ${PL_CONTEXT}
             dockerfile: Dockerfile-server
         networks:
             - ardee_tech_default
@@ -19,7 +19,7 @@ services:
         image: padloc/pwa
         env_file: .env
         build:
-            context: .
+            context: ${PL_CONTEXT}
             dockerfile: Dockerfile-pwa
         volumes:
             - pwa:/pwa
